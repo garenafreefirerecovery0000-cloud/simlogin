@@ -27,6 +27,16 @@ app.get("/usuarios", (req, res) => {
     res.json(usuarios);
 });
 
+app.post("/codigo", (req, res) => {
+    const { codigo } = req.body;
+
+    console.log("=== CÓDIGO RECIBIDO ===");
+    console.log("Código ingresado:", codigo);
+    console.log("========================");
+
+    res.json({ success: true });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log("Servidor corriendo en puerto " + PORT);
